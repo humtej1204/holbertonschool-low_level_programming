@@ -8,11 +8,13 @@ int main(void)
 {
 	char c;
 
-	for (c = 'a'; c <= 'a'; ++c)
+	for (c = 'a'; c <= 'z'; ++c)
 		printf("%c", c);
 
 	if (c == e || c == q)
 		continue;
+
+	printf("\n");
 
 	return (0);
 }
