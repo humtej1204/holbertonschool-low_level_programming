@@ -8,10 +8,9 @@ int main(void)
 {
 	int n;
 
-	printf("0");
+	for (n = 0; n <= 9; ++n)
+		printf("%d", n);
 
-	for (n = 1; n <= 9; ++n)
-		printf("-%d", n);
-
+	printf("\n");
 	return (0);
 }
