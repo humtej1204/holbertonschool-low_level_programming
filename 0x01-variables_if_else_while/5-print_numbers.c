@@ -8,7 +8,8 @@ int main(void)
 {
 	int n;
 
-	printf("0")
+	printf("0");
+
 	for (n = 1; n <= 9; ++n)
 		printf("-%d", n);
 
