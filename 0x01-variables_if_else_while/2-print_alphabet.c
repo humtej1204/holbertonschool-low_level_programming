@@ -8,7 +8,7 @@ int main(void)
 {
 	char letter;
 
-	for (letter = 'A'; letter <= 'Z'; ++letter)
-	printf("%c\n", letter);
+	for (letter = 'a'; letter <= 'z'; ++letter)
+	printf("%c", letter);
 	return (0);
 }
