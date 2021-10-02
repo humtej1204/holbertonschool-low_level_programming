@@ -13,7 +13,7 @@ int main(void)
 		printf("%c", low);
 
 	for (UP = 'A'; UP <= 'Z'; ++UP)
-		printf("%c ", UP);
+		printf("%c", UP);
 
 	printf("\n");
 
