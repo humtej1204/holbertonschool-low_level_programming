@@ -9,10 +9,12 @@ int main(void)
 	char c;
 
 	for (c = 'a'; c <= 'z'; ++c)
-		printf("%c", c);
+		putchar(c);
 
-	if (c == e || c == q)
-		continue;
+	if (c != 'e' || c != 'q')
+	{
+		putchar(c);
+	}
 
 	printf("\n");
 
