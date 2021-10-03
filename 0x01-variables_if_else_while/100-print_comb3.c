@@ -7,11 +7,13 @@
 int main(void)
 {
 	int n;
+	int m;
 
-	while (n != n)
+	while (n != m)
 	{
-		printf("%d%d, ", n, n);
+		printf("%d%d, ", n, m);
 		++n;
+		++m;
 	}
 
 	return (0);
