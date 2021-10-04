@@ -6,15 +6,31 @@
  */
 int main(void)
 {
-	int n = 0;
-	int m = 0;
+	int a = 0;
+	int b = 0;
+	int coma = 1;
 
-	while (n != m)
+	while (a <= 9)
 	{
-		printf("%d%d, ", n, m);
-		++n;
-		++m;
+		while (b <= 9)
+		{
+			if (a < b)
+			{
+				if (coma == 0)
+				{
+					putchar(',');
+					putchar(32);
+				}
+				coma = 0;
+				putchar(a + '0');
+				putchar(b + '0');
+			}
+			++b;
+		}
+		++a;
+		b = 0;
 	}
+	putchar(8);
 
 	return (0);
 }
