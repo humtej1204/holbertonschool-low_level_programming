@@ -17,19 +17,19 @@ int main(void)
 			{
 				while (d <= 9)
 				{
-					if (a <= c && b < d)
+					if ((c * 10) + d > (a * 10) + b)
 					{
 					if (coma == 0)
 					{
 						putchar(',');
-						putchar(' ');
+						putchar(32);
 					}
-						coma = 0;
 						putchar(a + '0');
 						putchar(b + '0');
 						putchar(32);
 						putchar(c + '0');
 						putchar(d + '0');
+						coma = 0;
 					}
 					++d;
 				}
