@@ -4,17 +4,17 @@
  *
  * @c: The character to evaluate
  *
- * Return: Get 1 if c is lowercase,
+ * Return: Get 1 if c is uppercase,
  * get 0 otherwise
  */
 int _islower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 97 && c <= 122)
 	{
-		_putchar('1');
+		return (1);
 	}
 	else
 	{
-		_putchar('0');
+		return (0);
 	}
 }
