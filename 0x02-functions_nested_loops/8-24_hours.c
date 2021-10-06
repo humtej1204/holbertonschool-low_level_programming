@@ -6,11 +6,11 @@ void jack_bauer(void)
 {
 	int hour, h1, h2, min, m1, m2;
 
-	for (hour = 0, hour <= 23, ++hour)
+	for (hour = 0; hour <= 23; ++hour)
 	{
 		h1 = hour / 10;
 		h2 = hour % 10;
-		for (min = 0, min <= 60, ++min)
+		for (min = 0; min <= 60; ++min)
 		{
 			m1 = min / 10;
 			m2 = min % 10;
