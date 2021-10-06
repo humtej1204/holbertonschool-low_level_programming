@@ -1,11 +1,9 @@
 #include "main.h"
 /**
- *  * times_table - function to print times table
- *   *
- *    *
- *     * Return: none - void function
- *      *
- *       */
+ * times_table - function to print times table
+ *
+ * Return: none - void function
+ */
 void times_table(void)
 {
 	int col = 0;
