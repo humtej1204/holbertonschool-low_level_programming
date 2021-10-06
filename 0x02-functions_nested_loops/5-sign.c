@@ -8,7 +8,7 @@
  * get 0 if it's 0, and
  * get -1 otherwise
  */
-int print_sign(int n);
+int print_sign(int n)
 {
 	if (n > 0)
 	{
