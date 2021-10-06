@@ -1,5 +1,11 @@
 #include "main.h"
-/**/
+/**
+ * print_to_98 - function
+ *
+ * @n: parameter
+ *
+ * Return: natural numbers
+ */
 void print_to_98(int n)
 {
 	int upper = 98;
