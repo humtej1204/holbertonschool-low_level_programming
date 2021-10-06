@@ -2,14 +2,12 @@
 /**
  * _abs - function to get the absolute value
  *
- * @int: parameter of the funtion
+ * @n: parameter of the funtion
  *
  * Return: the absolute value
  */
-int _abs(int)
+int _abs(int n)
 {
-	int n;
-
 	if (n < 0)
 	{
 		return (n);
