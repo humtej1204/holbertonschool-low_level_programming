@@ -1,10 +1,6 @@
 #include "main.h"
-/**
- * main - main function
- *
- * Return: End program
- */
-int main(void)
+
+void print_alphabet(void)
 {
 	char a = 'a';
 
@@ -15,5 +11,4 @@ int main(void)
 	}
 
 	_putchar(10);
-	return (0);
 }
