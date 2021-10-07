@@ -6,29 +6,32 @@
  */
 int main(void)
 {
-	unsigned long int n, a = 1, b = 1, s, s1, s2;
+	unsigned long int i, j, k, j1, j2, k1, k2;
 
-	printf("%lu", a);
+	j = 1;
+	k = 2;
 
-	for (n = 1; n <= 90; n++)
+	printf("%lu", j);
+
+	for (i = 1; i < 91; i++)
 	{
-		s = a + b;
-		printf(", %lu", s);
-		a = b;
-		b = s;
+		printf(", %lu", k);
+		k = k + j;
+		j = k - j;
 	}
 
-	for (n = 91; n <= 98; ++n)
+	j1 = j / 1000000000;
+	j2 = j % 1000000000;
+	k1 = k / 1000000000;
+	k2 = k % 1000000000;
+
+	for (i = 92; i < 99; ++i)
 	{
-		s = a + b;
-		s1 = s / 1000000000;
-		s2 = s % 1000000000;
-		printf(", %lu%lu", s1, s2);
-		a = b;
-		b = s;
+		printf(", %lu", k1 + (k2 / 1000000000));
+		printf("%lu", k2 % 1000000000);
+		k1 = k1 + j1;
+		j1 = k1 - j1;
+		k2 = k2 + j2;
+		j2 = k2 - j2;
 	}
-
-	putchar(10);
-
-	return (0);
 }
