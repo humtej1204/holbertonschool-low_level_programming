@@ -14,7 +14,7 @@ void print_times_table(int n)
 
 	for (m = 0; m <= n; m++)
 	{
-		for (a = 0; a <= n; n++)
+		for (a = 0; a <= n; a++)
 		{
 			p = m * a;
 			if (c == 0 && p < 10)
