@@ -12,34 +12,40 @@ void print_times_table(int n)
 	int a, m, p;
 	int c = 1;
 
-	for (m = 0; m <= n; m++)
+	if (n >= 0 || n <= 15)
 	{
-		for (a = 0; a <= n; a++)
+		for (m = 0; m <= n; m++)
 		{
-			p = m * a;
-			if (c == 0 && p < 10)
+			for (a = 0; a <= n; a++)
 			{
-				printf(",   %d", p);
+				p = m * a;
+				if (c == 0 && p < 10)
+				{
+					printf(",   %d", p);
+				}
+				else if (c == 0 && p < 100)
+				{
+					printf(",  %d", p);
+				}
+				else if (c == 0 && p < 1000)
+				{
+					printf(", %d", p);
+				}
+				else if (c == 0 && p >= 1000)
+				{
+					printf(",%d", p);
+				}
+				else
+				{
+					printf("%d", p);
+				}
+				c = 0;
 			}
-			else if (c == 0 && p < 100)
-			{
-				printf(",  %d", p);
-			}
-			else if (c == 0 && p < 1000)
-			{
-				printf(", %d", p);
-			}
-			else if (c == 0 && p >= 1000)
-			{
-				printf(",%d", p);
-			}
-			else
-			{
-				printf("%d", p);
-			}
-			c = 0;
+			putchar(10);
+			c = 1;
 		}
-		putchar(10);
-		c = 1;
+	}
+	else
+	{
 	}
 }
