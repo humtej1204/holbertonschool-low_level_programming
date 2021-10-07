@@ -8,8 +8,8 @@ int main(void)
 {
 	long int n, a = 1, b = 1, s;
 
-	printf("%ld", a);
-	for (n = 1; n < 98; ++n)
+	printf("%d", a);
+	for (n = 1; n <= 98; ++n)
 	{
 		s = a + b;
 		printf(", %ld", s);
