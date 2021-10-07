@@ -10,7 +10,7 @@ int main(void)
 
 	printf("%lu", a);
 
-	for (n = 1; n <= 80; n++)
+	for (n = 1; n <= 90; n++)
 	{
 		s = a + b;
 		printf(", %lu", s);
@@ -21,7 +21,7 @@ int main(void)
 	s1 = s / 1000000000;
 	s2 = s % 1000000000;
 
-	for (n = 81; n <= 98; ++n)
+	for (n = 91; n <= 98; ++n)
 	{
 		s = a + b;
 		printf(", %lu%lu", s1, s2);
