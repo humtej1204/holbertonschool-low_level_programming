@@ -6,22 +6,17 @@
  */
 int main(void)
 {
-	int i = 1;
-	long long int num1 = 0;
-	long long int num2 = 1;
-	long long int sumPrevTwo = 0;
+	long int n, a = 1, b = 1, s;
 
-	while (i <= 98)
+	printf("%ld", a);
+	for (n = 1; n < 98; ++n)
 	{
-		if (i < 100)
-			printf("%lld%s", num1 + num2, ", ");
-		else
-			printf("%lld", num1 + num2);
-		sumPrevTwo = num1 + num2;
-		num1 = num2;
-		num2 = sumPrevTwo;
-		i++;
+		s = a + b;
+		printf(", %ld", s);
+		a = b;
+		b = s;
 	}
-	printf("\n");
+	putchar(10);
+
 	return (0);
 }
