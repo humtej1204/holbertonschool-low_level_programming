@@ -6,16 +6,29 @@
  */
 int main(void)
 {
-	long long int  n, a = 1, b = 1, s;
+	unsigned long int n, a = 1, b = 1, s, s1, s2;
 
-	printf("%lld", a);
-	for (n = 1; n <= 98; ++n)
+	printf("%lu", a);
+
+	for (n = 1; n <= 80; n++)
 	{
 		s = a + b;
-		printf(", %lld", s);
+		printf(", %lu", s);
 		a = b;
 		b = s;
 	}
+
+	s1 = s / 1000000000;
+	s2 = s % 1000000000;
+
+	for (n = 81; n <= 98; ++n)
+	{
+		s = a + b;
+		printf(", %lu%lu", s1, s2);
+		a = b;
+		b = s;
+	}
+
 	putchar(10);
 
 	return (0);
