@@ -1,24 +1,33 @@
 #include "main.h"
 /**
- * print_number - prints an integer.
+ * print_number - function
  *
- * @n: integer n to print using _putchar
+ * @n: parameter
  */
 void print_number(int n)
 {
-	int r;
-
+	int d, base10 = 1;
+	/* Si n inicial es negativo */
 	if (n < 0)
 	{
-		n *= -1;
-		_putchar(45);
+		_putchar('-');
+		n = -n;
 	}
-	if (n == 0)
+	/* igualamos el valor de d con el valor inicial de n*/
+	d = n;
+	/* Obtenemos la notacion exponencial del numero */
+	while (d > 9)
 	{
-		return;
+		d = d / 10;
+		base10 = base10 * 10;
 	}
-	r = n % 10;
-
-	print_number(n / 10);
-	_putchar(r + '0');
+	/* Descomponemos el numero */
+	while (base10 > 1)
+	{
+		_putchar((n / base10) + '0');
+		n = n % base10;
+		base10 = base10 / 10;
+	}
+	/* imprimimos el ultimo digito del numero */
+	_putchar((n % 10) + '0');
 }
