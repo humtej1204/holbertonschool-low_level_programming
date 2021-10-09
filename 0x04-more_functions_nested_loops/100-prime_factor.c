@@ -4,8 +4,8 @@
  * main - main funcion
  *
  * Return: end program
- * */
-int main()
+ */
+int main(void)
 {
 	long int c, b, a = 612852475143;
 
