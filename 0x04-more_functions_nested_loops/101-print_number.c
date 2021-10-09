@@ -3,8 +3,6 @@
  * print_number - prints an integer.
  *
  * @n: integer n to print using _putchar
- *
- * Return: none - void function
  */
 void print_number(int n)
 {
@@ -16,7 +14,9 @@ void print_number(int n)
 		_putchar(45);
 	}
 	if (n == 0)
+	{
 		return;
+	}
 	r = n % 10;
 
 	print_number(n / 10);
