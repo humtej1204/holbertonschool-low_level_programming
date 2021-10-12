@@ -4,6 +4,8 @@
  *
  * @dest: pointer of parameter
  * @src: pointer of parameter
+ *
+ * Return: return dest value
  */
 char *_strcpy(char *dest, char *src)
 {
