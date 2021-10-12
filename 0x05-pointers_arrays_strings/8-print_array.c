@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * swap_int - function
+ * print_array - function
  *
  * @a: pointer of parameter
  * @n: parameter
