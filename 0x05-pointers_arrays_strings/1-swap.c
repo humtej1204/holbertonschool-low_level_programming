@@ -1,7 +1,12 @@
 #include "main.h"
-/**/
+/**
+ * swap_int - function
+ *
+ * @a: pointer of parameter
+ * @b: pointer of parameter
+ */
 void swap_int(int *a, int *b)
 {
-	*a = 42;
-	*b = 98;
+	a = *b;
+	b = *a;
 }
