@@ -1,2 +1,2 @@
-**Holberton Proyect - Week 2**
-*0x00. C - Hello, World*
+**Holberton Proyect - Week 5**
+*0x07. C - Even more pointers, arrays and strings*
