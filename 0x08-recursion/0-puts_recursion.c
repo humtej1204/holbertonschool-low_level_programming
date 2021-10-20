@@ -6,7 +6,7 @@
  */
 void _puts_recursion(char *s)
 {
-	putchar(s[0]);
+	_putchar(s[0]);
 	s++;
 	if (s[0] != '\0')
 	{
