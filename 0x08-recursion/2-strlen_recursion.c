@@ -4,6 +4,8 @@
  * number of caracters in the string
  *
  * @s: parameter
+ *
+ * Return: end function
  */
 int _strlen_recursion(char *s)
 {
