@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * _sqrt_recursion - get natural square;
+ * _sqrt - get natural square;
  *
  * @n: integer number
  *
  * Return: square root if ahve square root. -1 other
  */
-int _sqrt_recursion(int n)
+int _sqrt(int n)
 {
 	int val;
 
@@ -16,7 +16,7 @@ int _sqrt_recursion(int n)
 	if (val == 0)
 		return (1);
 	else
-		return (1 + _sqrt_recursion(val, y + 2));
+		return (1 + _sqrt(val, y + 2));
 }
 /**
  * _sqrt - identify perfect square number
@@ -34,5 +34,5 @@ int _sqrt_recursion(int n)
 		return (0);
 	if (n == 1)
 		return (1);
-	return (main_algorithm(n, 1));
+	return (_sqrt(n, 1));
 }
