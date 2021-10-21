@@ -8,7 +8,7 @@
 int _sqrt(int x, int y)
 {
 	int sum;
-	
+
 	sum = x - y;
 	if (sum < 0)
 		return (-(y / 2) - 1);
