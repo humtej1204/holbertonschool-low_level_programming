@@ -8,7 +8,7 @@
  */
 int is_prime(int n, int div)
 {
-    if (div > (n / 2)) /* perfect case */
+    if (div > (n / 2))
         return (1);
     if (n % div == 0)
         return (0);
