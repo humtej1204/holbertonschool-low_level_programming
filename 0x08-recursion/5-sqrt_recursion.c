@@ -2,11 +2,11 @@
 /**
  * _sqrt - get natural square;
  *
- * @n: integer number
- *
+ * @x: integer number
+ * @y: integer number
  * Return: square root if ahve square root. -1 other
  */
-int _sqrt(int n)
+int _sqrt(int x, int y)
 {
 	int val;
 
