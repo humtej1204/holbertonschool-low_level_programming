@@ -1,35 +1,27 @@
 #include "main.h"
-int _sqrt(int, int);
 /**
- * _sqrt_recursion - get natural square;
- *
- * @n: integer number
- *
- * Return: square root if ahve square root. -1 other
+ * main_algorithm - algoritmo principal de numero primo
+ * @x: numero
+ * @y: valor a evaluar
+ * Return: resultado 0 no primo 1 primo
  */
-int _sqrt_recursion(int n)
+int main_algorithm(int x, int y)
 {
-	int factor = 0;
-
-	if (n < 0)
-		return (-1);
+	if ((x % y) == 0 && y < x)
+		return (0);
+	if (x == y)
+		return (1);
 	else
-		return (_sqrt(n, factor));
+		return (main_algorithm(x, y + 1));
 }
 /**
- * _sqrt - identify perfect square number
- *
- * @n: integer number
- * @r: possible root
- *
- * Return: square root if ahve square root. -1 other
+ * is_prime_number - verifica si es numero primo
+ * @n: numero a verificar
+ * Return: resultado 0 no primo 1 primo
  */
-int _sqrt(int n, int r)
+int is_prime_number(int n)
 {
-	if ((r * r) > n) /* impossible case */
-		return (-1);
-	if ((r * r) < n)
-		return (_sqrt(n, r + 1));
-	return (r);
-
+	if (n <= 1)
+		return (0);
+	return (main_algorithm(n, 2));
 }
