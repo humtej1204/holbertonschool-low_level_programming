@@ -6,7 +6,7 @@
  * @size: parameter with the size of the array
  * @c: element of the array
  *
- * Return: Return the array
+ * Return: Return the value
  */
 char *create_array(unsigned int size, char c)
 {
@@ -15,11 +15,23 @@ char *create_array(unsigned int size, char c)
 
 	a = malloc(sizeof(char) * size);
 
-	while (i < size)
+	if (size == 0)
 	{
-		a[i] = c;
-		i++;
+		return (0);
+	}
+	else if (a == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		while (i < size)
+		{
+			a[i] = c;
+			i++;
+		}
+		return (a);
 	}
 
-	return (a);
+	return (0);
 }
