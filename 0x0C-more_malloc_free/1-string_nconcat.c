@@ -1,57 +1,45 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
- * _strlen - length of string
- *
- * @str: pointer to a string
- *
- * Return: int, length
+ * string_nconcat - string_nconcat.
+ * @s1: char to check.
+ * @s2: char to check.
+ * @n: int to check.
+ * Return: a.
  */
-int _strlen(char *str)
-{
-	int i = 0;
-
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-/**
- * string_nconcat - concatenates two strings
- *
- * @s1: pointer to a char
- * @s2: pointer to a char
- * @n: unsigned int
- * Return: newly allocated space un memory
- */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i, j, k, len1, len2;
+	char *a;
+	unsigned int i = 0;
+	unsigned int j = 0;
+	unsigned int k = 0;
+	unsigned int l = 0;
+	unsigned int h = 0;
 
-	len1 = 0;
-	len2 = 0;
-	k = 0;
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-	if (n < len2)
-		len2 = n;
-	s = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (s == NULL)
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
+		j++;
+	if (j > n)
+		j = n;
+	k = i + j + 1;
+	a = malloc(k);
+	if (!a)
 		return (NULL);
-	for (i = 0; i < len1; i++)
-		*(s + i) = *(s1 + i);
-	for (j = i; j < i + len2; j++)
+	while (s1[l] != '\0')
 	{
-		*(s + j) = *(s2 + k);
-		k++;
+		a[l] = s1[l];
+		l++;
 	}
-	*(s + j) = '\0';
-	return (s);
+	while (h < j)
+	{
+		a[l + h] = s2[h];
+		h++;
+	}
+	a[l + j] = '\0';
+	return (a);
 }
