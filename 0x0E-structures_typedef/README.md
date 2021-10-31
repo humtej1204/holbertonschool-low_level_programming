@@ -1,2 +1,2 @@
-**Holberton Proyect - Week 2**
-*0x00. C - Hello, World*
+**Holberton Proyect - Week 6**
+*0x0E. C - Structures, typedef*
