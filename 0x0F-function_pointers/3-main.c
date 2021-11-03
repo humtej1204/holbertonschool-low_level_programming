@@ -7,7 +7,7 @@
  * @argc: numero de argumentos
  * @argv: parametros
  *
- * return - result of the operation selected
+ * Return: result of the operation selected
  */
 int main(int argc, char *argv[])
 {
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	calculator = get_op_func(argv[2]);
-	
+
 	if (calculator == NULL)
 	{
 		printf("Error\n");
