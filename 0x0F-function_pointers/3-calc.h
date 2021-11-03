@@ -1,5 +1,7 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * struct op - Struct op
  *
