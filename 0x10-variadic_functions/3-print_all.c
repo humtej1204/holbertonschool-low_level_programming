@@ -8,17 +8,13 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	int x = 0;
+	char *k;
 	char *sep = ", ";
 
 	va_start(list, format);
 
 	while ((*format) != 0 && *(format + x) != '\0')
 	{
-		if (x > 1)
-		{
-			printf("%s", sep);
-		}
-
 		switch (*(format + x))
 		{
 			case 's':  /* string */
@@ -34,6 +30,13 @@ void print_all(const char * const format, ...)
 			case 'f':  /* float */
 				printf("%f", va_arg(list, double));
 				break;
+			default:   /* if it does not comply with any of the cases */
+				x++;
+				continue;
+		}
+		if (*(format + x + 1) != 0)
+		{
+			printf("%s", sep);
 		}
 		x++;
 	}
