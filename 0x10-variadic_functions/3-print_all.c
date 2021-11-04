@@ -18,7 +18,9 @@ void print_all(const char * const format, ...)
 		switch (*(format + x))
 		{
 			case 's':  /* string */
-				printf("%s", va_arg(list, char *));
+				k = va_arg(list, char *);
+				k = (k != NULL) ? k : "(nil)";
+				printf("%s", k);
 				break;
 			case 'i':  /* int */
 				printf("%i", va_arg(list, int));
