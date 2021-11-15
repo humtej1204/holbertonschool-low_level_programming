@@ -1,2 +1,2 @@
-# 0x00. C - Hello, World*
+# 0x12-singly_linked_lists
 > **Holberton Proyect - Week 7**
