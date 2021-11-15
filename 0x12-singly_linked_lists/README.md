@@ -1,2 +1,2 @@
-**Holberton Proyect - Week 2**
-*0x00. C - Hello, World*
+# 0x00. C - Hello, World*
+> **Holberton Proyect - Week 7**
