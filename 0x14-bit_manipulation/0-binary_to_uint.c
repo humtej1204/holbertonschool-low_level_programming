@@ -41,7 +41,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int base, bs, n2, x, sum = 0;
 	int i;
 
-	if (b == NULL || *b == '\0')
+	if (b == NULL)
 	{
 		return (0);
 	}
