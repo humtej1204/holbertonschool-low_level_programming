@@ -11,5 +11,5 @@ void print_binary(unsigned long int n)
 		print_binary(n >> 1);
 	/* get the last bit of the number */
 	binary = n & 1;
-	_putchar(binary + '0');
+	putchar(binary + '0');
 }
