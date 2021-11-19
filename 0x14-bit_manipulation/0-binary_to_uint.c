@@ -37,38 +37,32 @@ int _pow(int x, int y)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int n;
-	unsigned int base, bs, n2, x, sum = 0;
-	int i;
+	unsigned int sum = 0;
+	int i, x, n;
 
 	if (b == NULL)
 	{
 		return (0);
 	}
 
-	n = atoi(b);
-	x = n;
-
-	for (i = 0; b[i] != 0; i++)
-	{
-		if (b[i] != 48 && b[i] != 49)
-		{
-			return (0);
-		}
-	}
-
-	/* Buscamos la base del numero recibido */
-	for (bs = 0; x > 9; bs++)
-	{
-		x = x / 10;
-	}
+	n = strlen(b) - 1;
 
 	/* Realizamos la operacion para hallar suma */
-	for (base = 0; base <= bs; base++)
+	for (x = 0, i = 0; n >= x; n--)
 	{
-		n2 = n % 10;
-		sum = sum + (n2 * _pow(2, base));
-		n = n / 10;
+		switch (b[i])
+		{
+			case '1':
+				sum = sum + _pow(2, n);
+				i++;
+				break;
+			case '0':
+				sum = sum + 0;
+				i++;
+				break;
+			default:
+				return (0);
+		}
 	}
 
 	return (sum);
