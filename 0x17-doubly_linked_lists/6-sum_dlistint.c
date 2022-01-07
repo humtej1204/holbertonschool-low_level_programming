@@ -1,15 +1,14 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - Finds the nth node of a dlistint_t linked list.
+ * sum_dlistint - sum all data (n) in a linked list dlistint_t.
  * @head: Double pointer to struct.
- * @index: index of the node to return.
  *
- * Return: Returns the nth node of a dlistint_t linked list.
+ * Return: 0 if empty or sum of n value
  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+int sum_dlistint(dlistint_t *head)
 {
-	if (index > 0 && head != NULL)
-		return (get_dnodeint_at_index(head->next, index - 1));
-	return (head ? head : NULL);
+	if (head)
+		return (head->n + sum_dlistint(head->next));
+	return (0);
 }
