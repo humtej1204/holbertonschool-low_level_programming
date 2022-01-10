@@ -1,2 +1,2 @@
-**Holberton Proyect - Week 2**
-*0x00. C - Hello, World*
+# 0x18. C - Dynamic libraries
+> **Holberton Proyect - Week 17**
