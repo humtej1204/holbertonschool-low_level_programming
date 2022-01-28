@@ -10,34 +10,37 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_n = NULL;
-	hash_node_t *head = NULL;
+	hash_node_t *new_n = NULL, *head = NULL;
 	unsigned long int index = 0;
 
-	/*Checking if ht exist*/
-	if (ht == NULL)
+	if (ht == NULL || value == NULL)
 		return (0);
-	/*Checking if key exist*/
+	index = key_index((unsigned char *)key, ht->size);
+	head = ht->array[index];
 	if (key == NULL)
 		return (0);
-	/*Giving space to the new node and setting values*/
+	if (key != NULL)
+	{
+		while (head)
+		{
+			if (head->key == key)
+			{
+				head->value = (char *)value;
+				return (1);
+			}
+			if (head->next)
+				head = head->next;
+			else
+				break;
+		}
+	}
+	head = ht->array[index];
 	new_n = malloc(sizeof(hash_node_t));
 	if (new_n == NULL)
 		return (0);
 	new_n->key = (char *)key;
-	if (value == NULL)
-	{
-		new_n->value = "";
-	}
-	else
-	{
-		new_n->value = (char *)value;
-	}
+	new_n->value = (char *)value;
 	new_n->next = NULL;
-	/*Getting the index*/
-	index = key_index((unsigned char *)key, ht->size);
-	/*Checking if the index have elements inside*/
-	head = ht->array[index];
 	if (head != NULL)
 	{
 		new_n->next = head;
@@ -45,6 +48,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 	ht->array[index] = new_n;
-
 	return (1);
 }
