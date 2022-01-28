@@ -11,6 +11,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_n = NULL;
+	hash_node_t *head = NULL;
 	unsigned long int index = 0;
 
 	/*Checking if key exist*/
@@ -26,7 +27,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	new_n->key = (char *)key;
 	new_n->value = (char *)value;
-	new_n->next = ht->array[index];
+	new_n->next = NULL;
+	/*Getting the index*/
+	index = key_index((unsigned char *)key, ht->size);
+	/*Checking if the index have elements inside*/
+	head = ht->array[index];
+	if (head != NULL)
+	{
+		new_n->next = head;
+		ht->array[index] = new_n;
+		return (1);
+	}
 	ht->array[index] = new_n;
 
 	return (1);
