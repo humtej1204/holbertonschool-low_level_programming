@@ -16,22 +16,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/*Checking if ht exist*/
 	if (ht == NULL)
-	{
 		return (0);
-	}
 	/*Checking if key exist*/
 	if (key == NULL)
-	{
 		return (0);
-	}
-	/*Giving space to the new node and seting values*/
+	/*Giving space to the new node and setting values*/
 	new_n = malloc(sizeof(hash_node_t));
 	if (new_n == NULL)
-	{
 		return (0);
-	}
 	new_n->key = (char *)key;
-	new_n->value = (char *)value;
+	if (value == NULL || value == "")
+	{
+		new_n->value = "";
+	}
+	else
+	{
+		new_n->value = (char *)value;
+	}
 	new_n->next = NULL;
 	/*Getting the index*/
 	index = key_index((unsigned char *)key, ht->size);
