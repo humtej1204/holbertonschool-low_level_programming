@@ -4,6 +4,7 @@
  *
  * @ht: is the hash table you want to add or update the key/value to
  * @key: is the key
+ * @value: value is the value associated with the key.
  *
  * Return: Returns the value associated with the element,
  * or NULL if key couldn’t be found
