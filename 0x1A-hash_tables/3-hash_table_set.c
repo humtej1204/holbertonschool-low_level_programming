@@ -23,15 +23,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		while (head)
 		{
-			if (head->key == key)
+			if (strcmp(head->key, key) == 0)
 			{
 				head->value = (char *)value;
 				return (1);
 			}
-			if (head->next)
-				head = head->next;
-			else
-				break;
+			head = head->next;
 		}
 	}
 	head = ht->array[index];
