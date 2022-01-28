@@ -11,14 +11,8 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_n = NULL;
-	hash_node_t *head = NULL;
 	unsigned long int index = 0;
 
-	/*Checking if ht exist*/
-	if (ht == NULL)
-	{
-		return (0);
-	}
 	/*Checking if key exist*/
 	if (key == NULL)
 	{
@@ -32,21 +26,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	new_n->key = (char *)key;
 	new_n->value = (char *)value;
-	new_n->next = NULL;
-	/*Getting the index*/
-	index = key_index((unsigned char *)key, ht->size);
-	/*Checking if the index have elements inside*/
-	head = ht->array[index];
-	if (head != NULL)
-	{
-		while (head->next)
-		{
-			head = head->next;
-		}
-		head->next = new_n;
-		ht->array[index] = head;
-		return (1);
-	}
+	new_n->next = ht->array[index];
 	ht->array[index] = new_n;
 
 	return (1);
