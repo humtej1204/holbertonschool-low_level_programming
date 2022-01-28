@@ -34,12 +34,10 @@ void hash_table_delete(hash_table_t *ht)
  */
 void recursive_delete(hash_node_t *node)
 {
-	printf("Estoy aqui\n");
 	if (node->next)
 	{
 		recursive_delete(node->next);
 	}
-	printf("Estoy por limpiar node [%s:%s]\n", node->key, node->value);
 	free(node->key);
 	free(node->value);
 	free(node);
