@@ -13,19 +13,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_n = NULL, *head = NULL;
 	unsigned long int index = 0;
 
-	if (ht == NULL || value == NULL)
+	if (ht == NULL || value == NULL || key == NULL || strcmp(key, "") == 0)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
 	head = ht->array[index];
-	if (key == NULL || strcmp(key, "") == 0)
-		return (0);
 	if (key != NULL)
 	{
 		while (head)
 		{
 			if (strcmp(head->key, key) == 0)
 			{
-				head->value = (char *)value;
+				free(head->value);
+				head->value = strdup(value);
 				return (1);
 			}
 			head = head->next;
