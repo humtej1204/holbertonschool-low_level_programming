@@ -13,6 +13,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *head = NULL;
 	unsigned long int index = 0;
 
+	/*Checking if ht exist*/
+	if (ht == NULL)
+		return (NULL);
 	/*Checking if key exist*/
 	if (key == NULL)
 	{
