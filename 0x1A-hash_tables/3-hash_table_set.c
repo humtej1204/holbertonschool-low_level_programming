@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			if (head->key == key)
 			{
-				head->value = strdup(value);
+				head->value = (char *)value;
 				return (1);
 			}
 			if (head->next)
