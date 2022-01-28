@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_n == NULL)
 		return (0);
 	new_n->key = (char *)key;
-	if (value == NULL || value == "")
+	if (value == NULL)
 	{
 		new_n->value = "";
 	}
