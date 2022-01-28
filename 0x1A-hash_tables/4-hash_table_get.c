@@ -14,6 +14,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *head = NULL;
 	unsigned long int index = 0;
 
+	/*Checking if ht exist*/
+	if (ht == NULL)
+	{
+		return (0);
+	}
 	/*Checking if key exist*/
 	if (key == NULL)
 	{
