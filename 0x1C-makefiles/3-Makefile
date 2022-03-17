@@ -12,7 +12,7 @@ open: $(OBJ)
 clean:
 	$(RM) ./*~ $(NAME)
 
-oclean: $(OBJ)
+oclean:
 	$(RM) $(OBJ)
 
 fclean: clean oclean
