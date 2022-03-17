@@ -8,6 +8,4 @@ all: open
 open: $(OBJ)
 	$(CC) $(OBJ) -o school
 
-@main.o: main.c
-
-@school.o: school.c
+%.o: %.c
