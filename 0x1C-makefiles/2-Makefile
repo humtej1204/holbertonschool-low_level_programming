@@ -8,4 +8,4 @@ all: open
 open: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
+$(OBJ): %.o: %.c
