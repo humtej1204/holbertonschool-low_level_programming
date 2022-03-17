@@ -6,6 +6,6 @@ NAME = school
 all: open
 
 open: $(OBJ)
-	$(CC) $(OBJ) -o school
+	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
