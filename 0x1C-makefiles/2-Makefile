@@ -8,8 +8,6 @@ all: open
 open: $(OBJ)
 	$(CC) $(OBJ) -o school
 
-main.o: main.c
-	$(CC) -o main.o main.c
+@main.o: main.c
 
-school.o: school.c
-	$(CC) -o school.o school.c
+@school.o: school.c
