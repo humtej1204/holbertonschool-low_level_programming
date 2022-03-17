@@ -7,13 +7,11 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all open clean oclean fclean re
 
-all: open
-
-open: $(OBJ) m.h
-	$(CC) CFLAGS $(OBJ) -o $(NAME)
+all: $(OBJ) m.h
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) ./*~ $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
