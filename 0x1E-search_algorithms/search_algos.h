@@ -5,6 +5,9 @@
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
 
+int b_search(int *array, size_t size, int value);
+void print_array(int *array, size_t size);
+
 /* Structures */
 /**
  * struct listint_s - singly linked list
