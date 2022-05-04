@@ -1,24 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "search_algos.h"
-
-int b_search(int *array, size_t size, int value);
 /**
  * print_array - Print the elements of an array
  *
- * @array: pointer to the first element of the array to print
- * @size: number of elements in array
+ * @start: pointer to the first element of the array to print
+ * @end: pointer to the last element of the array to print
  */
-void print_array(int *array, size_t size)
+void print_array(int *start, int *end)
 {
-	size_t i;
+	int i = 0;
 
 	printf("Searching in array: ");
-	for (i = 0; i <= size; i++)
+	while (*(start + i) <= *end)
 	{
 		if (i > 0)
 			printf(", ");
-		printf("%d", array[i]);
+		printf("%d", start[i]);
+
+		i++;
 	}
 	printf("\n");
 }
@@ -34,47 +34,42 @@ void print_array(int *array, size_t size)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	if (!array || size == 0)
+	int l = 0, r = size - 1;
+
+	if (!array)
 		return (-1);
 
-	return (b_search(array, size - 1, value));
+	return (b_search(array, l, r, size, value));
 }
 /**
  * b_search - function that searches for a value in a sorted array
  * of integers using the Binary search algorithm
  *
  * @array: pointer to the first element of the array to search in
+ * @l: index of the first element of the array to search in
+ * @r: index of the last element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
  *
  * Return: return the index where value is located
  */
-int b_search(int *array, size_t size, int value)
+int b_search(int *array, int l, int r, size_t size, int value)
 {
-	int pivot = size / 2, i = 0;
+	int p = 0;
 
-	/*printf("size = %ld\npivot = %d\n", size, array[pivot]);*/
-	print_array(array, size);
-
-	if (array[pivot] == value)
-		return (pivot);
-
-	if (array[pivot] != value && size == 0)
+	if (l > r)
 		return (-1);
 
-	if (value <= array[pivot])
-	{
-		i = binary_search(array, pivot, value);
-		if (i == -1)
-			return (-1);
-		return (pivot - i);
-	}
+	print_array(&array[l], &array[r]);
+	p = (l + r) / 2;
+
+	if (value == array[p])
+		return (p);
+
+	if (value < array[p])
+		r = p - 1;
 	else
-	{
-		pivot = (size % 2 == 0) ? pivot : pivot + 1;
-		i = binary_search(&array[size / 2 + 1], pivot, value);
-		if (i == -1)
-			return (-1);
-		return (pivot + i);
-	}
+		l = p + 1;
+
+	return (b_search(array, l, r, size, value));
 }
