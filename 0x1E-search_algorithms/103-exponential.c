@@ -18,28 +18,6 @@ void print_arr(int *array, size_t size)
 	printf("%d", array[i]);
 	printf("\n");
 }
-
-int b_search(int *array, int l, int r, size_t size, int value)
-{
-        int p = 0;
-
-        if (l > r)
-                return (-1);
-
-        print_arr(&array[l], r - l);
-        p = (l + r) / 2;
-
-        if (value == array[p])
-                return (p);
-
-        if (value < array[p])
-                r = p - 1;
-        else
-                l = p + 1;
-
-        return (b_search(array, l, r, size, value));
-}
-
 /**
  * exponential_search - function that searches for a value in a sorted array
  * of integers using the Exponential search algorithm
@@ -53,7 +31,7 @@ int b_search(int *array, int l, int r, size_t size, int value)
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t i/*, mid*/;
+	size_t i, mid;
 
 	if (!array)
 		return (-1);
@@ -62,7 +40,7 @@ int exponential_search(int *array, size_t size, int value)
 	if (array[0] == value)
 		return (0);
 	/* Exponential search */
-	for (i = 1; array[i] < value && i < size; i *= 2)
+	for (i = 1; i < size && array[i] <= value; i *= 2)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	}
@@ -70,7 +48,7 @@ int exponential_search(int *array, size_t size, int value)
 	i = i / 2;
 	printf("Value found between indexes [%ld] and [%ld]\n", i, size);
 	/* Binary Search */
-	/*if (array[i] == value)
+	if (array[i] == value)
 		return (i);
 	if (array[size] == value)
 		return (size);
@@ -85,8 +63,7 @@ int exponential_search(int *array, size_t size, int value)
 			size = mid - 1;
 		else
 			i = mid + 1;
-	}*/
-	return(b_search(array, i, size, size - i, value));
-	
-	/*return (-1);*/
+	}
+
+	return (-1);
 }
