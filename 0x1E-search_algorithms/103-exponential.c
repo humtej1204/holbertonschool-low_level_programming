@@ -5,17 +5,17 @@
  * @start: pointer to the first element of the array to print
  * @end: pointer to the last element of the array to print
  */
-void print_array(int *start, int *end)
+void print_arr(int *array, size_t size)
 {
-	int i = 0;
+	size_t i = 0;
 
 	printf("Searching in array: ");
-	while (start[i] != *end)
+	while (i < size)
 	{
-		printf("%d, ", start[i]);
+		printf("%d, ", array[i]);
 		i++;
 	}
-	printf("%d", start[i]);
+	printf("%d", array[i]);
 	printf("\n");
 }
 /**
@@ -40,7 +40,7 @@ int exponential_search(int *array, size_t size, int value)
 	if (array[0] == value)
 		return (0);
 	/* Exponential search */
-	for (i = 1; array[i] <= value && i < size; i *= 2)
+	for (i = 1; array[i] < value && i < size; i *= 2)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	}
@@ -51,7 +51,7 @@ int exponential_search(int *array, size_t size, int value)
 	while (i <= size)
 	{
 		mid = (size + i) / 2;
-		print_array(&array[i], &array[size]);
+		print_arr(&array[i], (size - i));
 
 		if (array[mid] == value)
 			return (mid);
