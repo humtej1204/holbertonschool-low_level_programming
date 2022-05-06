@@ -39,15 +39,15 @@ int exponential_search(int *array, size_t size, int value)
 	/* If values is at start */
 	if (array[0] == value)
 		return (0);
-
-	for (i = 1; array[i] < value && i < size; i *= 2)
+	/* Exponential search */
+	for (i = 1; array[i] <= value && i < size; i *= 2)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	}
 	size = (i < size) ? i : size - 1;
 	i = i / 2;
 	printf("Value found between indexes [%ld] and [%ld]\n", i, size);
-
+	/* Binary Search */
 	while (i <= size)
 	{
 		mid = (size + i) / 2;
