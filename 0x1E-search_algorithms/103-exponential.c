@@ -7,16 +7,16 @@
  */
 void print_array(int *start, int *end)
 {
-        int i = 0;
+	int i = 0;
 
-        printf("Searching in array: ");
-        while (start[i] != *end)
-        {
-                printf("%d, ", start[i]);
-                i++;
-        }
+	printf("Searching in array: ");
+	while (start[i] != *end)
+	{
+		printf("%d, ", start[i]);
+		i++;
+	}
 	printf("%d", start[i]);
-        printf("\n");
+	printf("\n");
 }
 /**
  * exponential_search - function that searches for a value in a sorted array
