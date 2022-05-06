@@ -1,9 +1,9 @@
 #include "search_algos.h"
 /**
- * print_array - Print the elements of an array
+ * print_arr - Print the elements of an array
  *
- * @start: pointer to the first element of the array to print
- * @end: pointer to the last element of the array to print
+ * @array: pointer to the first element of the array to print
+ * @size: size of elements in the array
  */
 void print_arr(int *array, size_t size)
 {
