@@ -13,36 +13,36 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	listint_t *head;
+	listint_t *h;
 	size_t step = sqrt(size), i = 0;
 
 	if (!list)
 		return (NULL);
 
-	head = list;
+	h = list;
 	/* Only one Element */
-	if (size == 0 && head->n != value)
+	if (size == 0 && h->n != value)
 		return (NULL);
 
-
 	/* Jump Search */
-	while (head->n < value && i < size)
+	while (h->n < value && i < size)
 	{
 		i = i + step;
-		list = head;
-		while (head->index < i)
+		list = h;
+		while (h->index < i)
 		{
-			if (head->next != NULL)
-				head = head->next;
+			if (h->next != NULL)
+				h = h->next;
 			else
 				break;
 		}
-		printf("Value checked at index [%ld] = [%d]\n", head->index, head->n);
+		printf("Value checked at index [%ld] = [%d]\n", h->index, h->n);
 	}
-	printf("Value found between indexes [%ld] and [%ld]\n", list->index, head->index);
+	printf("Value found between indexes [%ld] and [%ld]\n",
+			list->index, h->index);
 
 	/* Lineal Search */
-	while (list->n <= value && list->index <= head->index)
+	while (list->n <= value && list->index <= h->index)
 	{
 		printf("Value checked at index [%ld] = [%d]\n", list->index, list->n);
 		if (list->n == value)
