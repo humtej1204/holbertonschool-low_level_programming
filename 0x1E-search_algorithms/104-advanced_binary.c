@@ -9,19 +9,19 @@
  */
 void print_arr(int *array, size_t size)
 {
-        size_t i = 0;
+	size_t i = 0;
 
-        printf("Searching in array: ");
-        while (i < size)
-        {
-                printf("%d, ", array[i]);
-                i++;
-        }
-        printf("%d", array[i]);
-        printf("\n");
+	printf("Searching in array: ");
+	while (i < size)
+	{
+		printf("%d, ", array[i]);
+		i++;
+	}
+	printf("%d", array[i]);
+	printf("\n");
 }
 /**
- * binary_search - function that searches for a value in a sorted array
+ * advanced_binary - function that searches for a value in a sorted array
  * of integers using the Binary search algorithm
  *
  * @array: pointer to the first element of the array to search in
@@ -32,12 +32,12 @@ void print_arr(int *array, size_t size)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-        int l = 0, r = size - 1;
+	int l = 0, r = size - 1;
 
-        if (!array)
-                return (-1);
+	if (!array)
+		return (-1);
 
-        return (b_search(array, l, r, size, value));
+	return (b_search(array, l, r, size, value));
 }
 /**
  * b_search - function that searches for a value in a sorted array
@@ -53,21 +53,21 @@ int advanced_binary(int *array, size_t size, int value)
  */
 int b_search(int *array, int l, int r, size_t size, int value)
 {
-        int p = 0;
+	int p = 0;
 
-        if (l > r)
-                return (-1);
+	if (l > r)
+		return (-1);
 
-        print_arr(&array[l], (r - l));
-        p = (l + r) / 2;
+	print_arr(&array[l], (r - l));
+	p = (l + r) / 2;
 
-        if (value == array[p] && array[p - 1] != value)
-                return (p);
+	if (value == array[p] && array[p - 1] != value)
+		return (p);
 
-        if (value <= array[p])
-                r = p;
-        else
-                l = p + 1;
+	if (value <= array[p])
+		r = p;
+	else
+		l = p + 1;
 
-        return (b_search(array, l, r, size, value));
+	return (b_search(array, l, r, size, value));
 }
