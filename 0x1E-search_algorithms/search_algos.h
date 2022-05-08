@@ -5,18 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Prototypes */
-int linear_search(int *array, size_t size, int value);
-int binary_search(int *array, size_t size, int value);
-int jump_search(int *array, size_t size, int value);
-int interpolation_search(int *array, size_t size, int value);
-int interpolation_search(int *array, size_t size, int value);
-int exponential_search(int *array, size_t size, int value);
-int advanced_binary(int *array, size_t size, int value);
-
-int b_search(int *array, int l, int r, size_t size, int value);
-void print_array(int *start, int *end);
-
 /* Structures */
 /**
  * struct listint_s - singly linked list
@@ -50,5 +38,22 @@ typedef struct skiplist_s
 	struct skiplist_s *next;
 	struct skiplist_s *express;
 } skiplist_t;
+
+/* Prototypes */
+int linear_search(int *array, size_t size, int value);
+int binary_search(int *array, size_t size, int value);
+int jump_search(int *array, size_t size, int value);
+int interpolation_search(int *array, size_t size, int value);
+int interpolation_search(int *array, size_t size, int value);
+int exponential_search(int *array, size_t size, int value);
+int advanced_binary(int *array, size_t size, int value);
+listint_t *jump_list(listint_t *list, size_t size, int value);
+skiplist_t *linear_skip(skiplist_t *list, int value);
+
+int b_search(int *array, int l, int r, size_t size, int value);
+void print_array(int *start, int *end);
+listint_t *create_list(int *array, size_t size);
+void print_list(const listint_t *list);
+void free_list(listint_t *list);
 
 #endif
