@@ -2,24 +2,22 @@
 #include <stdlib.h>
 #include "search_algos.h"
 /**
- * print_array - Print the elements of an array
+ * print_arr - Print the elements of an array
  *
- * @start: pointer to the first element of the array to print
- * @end: pointer to the last element of the array to print
+ * @array: pointer to the first element of the array to print
+ * @size: size of elements in the array
  */
-void print_array(int *start, int *end)
+void print_arr(int *array, size_t size)
 {
-        int i = 0;
+        size_t i = 0;
 
         printf("Searching in array: ");
-        while (*(start + i) <= *end)
+        while (i < size)
         {
-                if (i > 0)
-                        printf(", ");
-                printf("%d", start[i]);
-
+                printf("%d, ", array[i]);
                 i++;
         }
+        printf("%d", array[i]);
         printf("\n");
 }
 /**
@@ -32,7 +30,7 @@ void print_array(int *start, int *end)
  *
  * Return: return the index where value is located
  */
-int binary_search(int *array, size_t size, int value)
+int advanced_binary(int *array, size_t size, int value)
 {
         int l = 0, r = size - 1;
 
@@ -60,14 +58,14 @@ int b_search(int *array, int l, int r, size_t size, int value)
         if (l > r)
                 return (-1);
 
-        print_array(&array[l], &array[r]);
+        print_arr(&array[l], (r - l));
         p = (l + r) / 2;
 
-        if (value == array[p])
+        if (value == array[p] && array[p - 1] != value)
                 return (p);
 
-        if (value < array[p])
-                r = p - 1;
+        if (value <= array[p])
+                r = p;
         else
                 l = p + 1;
 
