@@ -16,6 +16,10 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	if (list == NULL)
 		return (NULL);
 
+	/* Only one Element */
+	if (size == 0 && h->n != value)
+		return (NULL);
+
 	/* Skip search */
 	h = list;
 	while (h->n <= value && h->next)
@@ -44,5 +48,5 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		list = list->next;
 	}
 
-	return (list);
+	return (NULL);
 }
