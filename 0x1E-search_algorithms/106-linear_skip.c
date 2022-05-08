@@ -11,17 +11,16 @@
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *h = NULL;
+	skiplist_t *h = list;
 
 	if (list == NULL)
 		return (NULL);
 
 	/* Only one Element */
-	if (size == 0 && h->n != value)
+	if (!h->next && h->n != value)
 		return (NULL);
 
 	/* Skip search */
-	h = list;
 	while (h->n <= value && h->next)
 	{
 		list = h;
